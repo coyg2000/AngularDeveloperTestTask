@@ -1,0 +1,49 @@
+<!--<div #drawingArea
+     (mousedown)="startDrawing($event)"
+     (mousemove)="drawing && drawRectangle($event)"
+     (mouseup)="stopDrawing()"
+     style="position: relative; width: 500px; height: 500px; border: 1px solid black;">
+  <div class="rect" *ngIf="drawing" [style.width.px]="width" [style.height.px]="height" [style.left.px]="startX" [style.top.px]="startY"></div>
+</div>
+<div *ngIf="!drawing" style="margin-top: 10px;">Perimeter: {{ perimeter }}</div>-->
+<!--<div #drawingArea
+     (mousedown)="startDrawing($event)"
+     (mousemove)="drawRectangle($event)"
+     (mouseup)="stopDrawing()"
+     style="position: relative; border: 1px solid black;"
+     [style.width.px]="svgDimensions?.width"
+     [style.height.px]="svgDimensions?.height">-->
+<!-- Draw rectangle using fetched dimensions -->
+<!--<div class="rect" *ngIf="drawing"
+       [style.width.px]="width"
+       [style.height.px]="height"
+       [style.left.px]="startX"
+       [style.top.px]="startY"
+       [style.transform]="'translate(-1px, -1px)'">
+  </div>
+</div>
+<div *ngIf="!drawing" style="margin-top: 10px;">Perimeter: {{ perimeter }}</div>-->
+
+<div #drawingArea
+     (mousedown)="startDrawing($event)"
+     (mousemove)="drawRectangle($event)"
+     (mouseup)="stopDrawing()"
+     style="position: relative; border: 1px solid black; width: 600px; height: 400px;"
+     [style.width.px]="drawingAreaWidth"
+     [style.height.px]="drawingAreaHeight">
+  <!-- Draw rectangle using fetched dimensions -->
+  <div class="rect" *ngIf="drawing"
+       [style.width.px]="width"
+       [style.height.px]="height"
+       [style.left.px]="startX"
+       [style.top.px]="startY"
+       [style.transform]="'translate(-1px, -1px)'">
+  </div>
+</div>
+<div *ngIf="!drawing" style="margin-top: 10px;">Perimeter: {{ perimeter }}</div>
+<div  style="margin-top: 10px;">Width: {{ svgDimensions?.width }}</div>
+<div  style="margin-top: 10px;">Height: {{ svgDimensions?.height }}</div>
+
+
+
+
